@@ -45,6 +45,11 @@ Route::group(['middleware' => 'isAdmin'], function(){
     Route::post('/offer/products/store', [\App\Http\Controllers\Admin\ProductController::class, 'offerProductStore']);
     Route::get('/offer/products/delete/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'offerProductDelete']);
 
+    //Gallery Image...
+    Route::get('/gallery-image/delete/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'galleryImageDelete']);
+    Route::get('/gallery-image/edit/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'galleryImageEdit']);
+    Route::post('/gallery-image/update/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'galleryImageUpdate']);
+
     //offer...
     Route::get('/offers', [OfferController::class, 'offerList']);
     Route::get('/create-offer', [OfferController::class, 'offerCreate']);
